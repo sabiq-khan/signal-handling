@@ -46,7 +46,7 @@
             * Equivalent to the following Docker commands:
             * $ docker build . -t signal-handling-example
             * $ CONTAINER_ID=$(docker run -d signal-handling-example)
-            * $ docker stop $CONTAINER_ID
+            * $ docker stop --time 12 $CONTAINER_ID
             * $ docker logs $CONTAINER_ID
             */
             "name": "E2E Test: Docker",
@@ -54,7 +54,6 @@
             "request": "launch",
             "program": "${workspaceFolder}/test/integration/test_docker.py",
             "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/.env.local.docker"
         }
     ]
 }
