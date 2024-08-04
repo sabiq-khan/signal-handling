@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            /*
+            * Equivalent to the following command:
+            * $ python3 test/unit/test_release_version.py
+            */
+            "name": "Unit Test: SignalHandlingExample",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test/unit/test_signal_handling_example.py",
+            "console": "integratedTerminal"
+        },
+        {
+            /*
+            * Equivalent to the following commands:
+            * $ python3 src/signal_handling_example/main.py
+            */
+            "name": "E2E Test: main.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/signal_handling_example/main.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env.local"
+        },
+        {
+            /*
+            * Equivalent to the following Docker commands:
+            * $ docker build . -t signal-handling-example
+            * $ CONTAINER_ID=$(docker run -d signal-handling-example)
+            * $ docker stop $CONTAINER_ID
+            * $ docker logs $CONTAINER_ID
+            */
+            "name": "E2E Test: Docker",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test/integration/test_docker.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env.local.docker"
+        }
+    ]
+}
