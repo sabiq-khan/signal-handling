@@ -7,7 +7,7 @@
         {
             /*
             * Equivalent to the following command:
-            * $ python3 test/unit/test_release_version.py
+            * $ python3 test/unit/test_signal_handling_example.py
             */
             "name": "Unit Test: SignalHandlingExample",
             "type": "debugpy",
@@ -17,15 +17,29 @@
         },
         {
             /*
-            * Equivalent to the following commands:
+            * Equivalent to the following command:
+            * $ python3 test/integration/test_signal_handling_example.py
+            */
+            "name": "Integration Test: SignalHandlingExample",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test/integration/test_signal_handling_example.py",
+            "console": "integratedTerminal"
+        },
+        {
+            /*
+            * Equivalent to the following command:
             * $ python3 src/signal_handling_example/main.py
+            * 
+            * To send a signal:
+            * - `Ctrl-C` from the shell sends a `SIGINT`
+            * - Alternatively, find PID with `ps` and send signal with `kill`
             */
             "name": "E2E Test: main.py",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/src/signal_handling_example/main.py",
             "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/.env.local"
         },
         {
             /*
